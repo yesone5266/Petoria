@@ -12,4 +12,5 @@ def choice():
   pet_tpye = request.args.get('pet_tpye')
   return render_template('play.html', pet_name = pet_name, pet_tpye = pet_tpye)
 
-app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
