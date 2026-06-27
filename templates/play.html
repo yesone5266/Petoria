@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=1.8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='play.css') }}?v=1.8">
+</head>
+
+<body>
+    <div id="container">
+        <div id='pet-panels'>
+            <div class="pet-panel">
+                <h2>펫 상태</h2>
+                <div id="states">
+                    <div class="item">
+                        <div class="state">
+                            <div class="text">포만감</div>
+                            <div class="value"><span data-state-type="포만감">0</span>/100</div>
+                        </div>
+                        <div class="bar">
+                            <div data-state-type="포만감"></div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="state">
+                            <div class="text">행복도</div>
+                            <div class="value"><span data-state-type="행복도">0</span>/100</div>
+                        </div>
+                        <div class="bar">
+                            <div data-state-type="행복도"></div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="state">
+                            <div class="text">청결도</div>
+                            <div class="value"><span data-state-type="청결도">0</span>/100</div>
+                        </div>
+                        <div class="bar">
+                            <div data-state-type="청결도"></div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="state">
+                            <div class="text">에너지</div>
+                            <div class="value"><span data-state-type="에너지">0</span>/100</div>
+                        </div>
+                        <div class="bar">
+                            <div data-state-type="에너지"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pet-panel">
+                <h2>펫 돌보기</h2>
+                <div id="cares">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-apple-icon lucide-apple">
+                            <path d="M12 6.528V3a1 1 0 0 1 1-1h0" />
+                            <path
+                                d="M18.237 21A15 15 0 0 0 22 11a6 6 0 0 0-10-4.472A6 6 0 0 0 2 11a15.1 15.1 0 0 0 3.763 10 3 3 0 0 0 3.648.648 5.5 5.5 0 0 1 5.178 0A3 3 0 0 0 18.237 21" />
+                        </svg>
+                        밥주기
+                    </button>
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-heart-icon lucide-heart">
+                            <path
+                                d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
+                        </svg>
+                        놀아주기
+                    </button>
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-sparkles-icon lucide-sparkles">
+                            <path
+                                d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" />
+                            <path d="M20 2v4" />
+                            <path d="M22 4h-4" />
+                            <circle cx="4" cy="20" r="2" />
+                        </svg>
+                        씻기기
+                    </button>
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-moon-icon lucide-moon">
+                            <path
+                                d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
+                        </svg>
+                        재우기
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="coin_panels">
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-coins-icon lucide-coins">
+                    <path d="M13.744 17.736a6 6 0 1 1-7.48-7.48" />
+                    <path d="M15 6h1v4" />
+                    <path d="m6.134 14.768.866-.5 2 3.464" />
+                    <circle cx="16" cy="8" r="6" />
+                </svg>
+                <div id="coin">
+                    <div>보유코인</div>
+                    <div>0</div>
+                </div>
+            </button>
+            <button id="shop">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-store-icon lucide-store">
+                    <path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5" />
+                    <path
+                        d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244" />
+                    <path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05" />
+                </svg>
+                상점
+            </button>
+            <button id="mini-game-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-gamepad2-icon lucide-gamepad-2">
+                    <line x1="6" x2="10" y1="11" y2="11" />
+                    <line x1="8" x2="8" y1="9" y2="13" />
+                    <line x1="15" x2="15.01" y1="12" y2="12" />
+                    <line x1="18" x2="18.01" y1="10" y2="10" />
+                    <path
+                        d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
+                </svg>
+                미니게임
+            </button>
+            <!-- 일일 미션 패널 -->
+            <div id="mission-panel">
+                <div id="mission-header">
+                    <span>📋 일일 미션</span>
+                    <span id="mission-reset-time">자정 초기화</span>
+                </div>
+                <ul id="mission-list">
+                    <!-- JS로 동적 생성 -->
+                </ul>
+                <div id="exp-bar-wrapper">
+                    <span>Lv <span id="level-num">1</span></span>
+                    <div id="exp-bar-bg">
+                        <div id="exp-bar-fill"></div>
+                    </div>
+                    <span><span id="exp-num">0</span>/100</span>
+                </div>
+            </div>
+        </div>
+        <div id="pet">
+            <div class="pet-level" id="pet-level-display">Lv1 (아기), {{ pet_name }}</div>
+            <img src="{{ url_for('static', filename=pet_tpye + '.png') }}" alt="{{pet_tpye}}" class="pet-image">
+        </div>
+        <dialog id="snack_modal" class="cares_modal">
+            <div class="modal">
+                <div>펫에게 간식을 주고, 포만감을 높여보세요!</div>
+                <div>재고가 없는 간식은 상점에서 구매할 수 있습니다.</div>
+                <div class="items" data-item-type="snack">
+                    <div>
+                        <img src="{{ url_for('static', filename='개껌.png') }}" alt="개껌">
+                        <div>개껌(<span data-snack-name="개껌">0</span>개)</div>
+                    </div>
+                    <div>
+                        <img src="{{ url_for('static', filename='육포.png') }}" alt="육포">
+                        <div>육포(<span data-snack-name="육포">0</span>개)</div>
+                    </div>
+                    <div>
+                        <img src="{{ url_for('static', filename='츄르.png') }}" alt="츄르">
+                        <div>츄르(<span data-snack-name="츄르">0</span>개)</div>
+                    </div>
+                    <div>
+                        <img src="{{ url_for('static', filename='참치캔.png') }}" alt="참치캔">
+                        <div>참치캔(<span data-snack-name="참치캔">0</span>개)</div>
+                    </div>
+                    <div>
+                        <img src="{{ url_for('static', filename='당근.png') }}" alt="당근">
+                        <div>당근(<span data-snack-name="당근">0</span>개)</div>
+                    </div>
+                    <div>
+                        <img src="{{ url_for('static', filename='사과.png') }}" alt="사과">
+                        <div>사과(<span data-snack-name="사과">0</span>개)</div>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+        <dialog id="toy_modal" class="cares_modal">
+            <div class="modal">
+                <div>펫을 놀아주고, 행복도를 높여보세요!</div>
+                <div>재고가 없는 장난감은 상점에서 구매할 수 있습니다.</div>
+                <div class="items" data-item-type="toy">
+                    <div>
+                        <img src="{{ url_for('static', filename='공.png') }}" alt="공">
+                        <div>공(<span data-toy-name="공">0</span>개)</div>
+                    </div>
+                    <div>
+                        <img src="{{ url_for('static', filename='낚시대.png') }}" alt="낚시대">
+                        <div>낚시대(<span data-toy-name="낚시대">0</span>개)</div>
+                    </div>
+                    <div>
+                        <img src="{{ url_for('static', filename='터그.png') }}" alt="터그">
+                        <div>터그(<span data-toy-name="터그">0</span>개)</div>
+                    </div>
+                    <div>
+                        <img src="{{ url_for('static', filename='털실.png') }}" alt="털실">
+                        <div>털실(<span data-toy-name="털실">0</span>개)</div>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+        <dialog id="bath_modal" class="cares_modal">
+            <div class="modal">
+                <div>펫을 씻겨주고, 청결도를 높여보세요!</div>
+                <div>재고가 없는 샤워용품은 상점에서 구매할 수 있습니다.
+                    <div class="items" data-item-type="bath">
+                        <div>
+                            <img src="{{ url_for('static', filename='샤워볼.png') }}" alt="샤워볼">
+                            <div>샤워볼(<span data-bath-name="샤워볼">0</span>개)</div>
+                        </div>
+                        <div>
+                            <img src="{{ url_for('static', filename='비누.png') }}" alt="비누">
+                            <div>비누(<span data-bath-name="비누">0</span>개)</div>
+                        </div>
+                        <div>
+                            <img src="{{ url_for('static', filename='칫솔&치약.png') }}" alt="칫솔&치약">
+                            <div>칫솔&치약(<span data-bath-name="칫솔&치약">0</span>개)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+        <dialog id="bedding_modal" class="cares_modal">
+            <div class="modal">
+                <div>펫을 재워주고, 에너지를 높여보세요!</div>
+                <div>재고가 없는 침구류는 상점에서 구매할 수 있슴니다.</div>
+                <div class="items" data-item-type="bedding">
+                    <div>
+                        <img src="{{ url_for('static', filename='쿠션.png') }}" alt="쿠션">
+                        <div>쿠션(<span data-bedding-name="쿠션">0</span>개)</div>
+                    </div>
+                    <div>
+                        <img src="{{ url_for('static', filename='이불.png') }}" alt="이불">
+                        <div>이불(<span data-bedding-name="이불">0</span>개)</div>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+        <dialog id="shop_modal">
+            <div>
+                <div class="type">
+                    <div>간식</div>
+                    <div class="items">
+                        <div data-item-type="간식" data-item-name="개껌" data-item-price="100">
+                            <img src="{{ url_for('static', filename='개껌.png') }}" alt="개껌">
+                            <div>개껌 - 100원</div>
+                        </div>
+                        <div data-item-type="간식" data-item-name="육포" data-item-price="100">
+                            <img src="{{ url_for('static', filename='육포.png') }}" alt="육포">
+                            <div>육포 - 100원</div>
+                        </div>
+                        <div data-item-type="간식" data-item-name="츄르" data-item-price="100">
+                            <img src="{{ url_for('static', filename='츄르.png') }}" alt="츄르">
+                            <div>츄르 - 100원</div>
+                        </div>
+                        <div data-item-type="간식" data-item-name="참치캔" data-item-price="100">
+                            <img src="{{ url_for('static', filename='참치캔.png') }}" alt="참치캔">
+                            <div>참치캔 - 100원</div>
+                        </div>
+                        <div data-item-type="간식" data-item-name="당근" data-item-price="100">
+                            <img src="{{ url_for('static', filename='당근.png') }}" alt="당근">
+                            <div>당근 - 100원</div>
+                        </div>
+                        <div data-item-type="간식" data-item-name="사과" data-item-price="100">
+                            <img src="{{ url_for('static', filename='사과.png') }}" alt="사과">
+                            <div>사과 - 100원</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="type">
+                    <div>목욕용품</div>
+                    <div class="items">
+                        <div data-item-type="목욕용품" data-item-name="샤워볼" data-item-price="100">
+                            <img src="{{ url_for('static', filename='샤워볼.png') }}" alt="샤워볼">
+                            <div>샤워볼 - 100원</div>
+                        </div>
+                        <div data-item-type="목욕용품" data-item-name="비누" data-item-price="100">
+                            <img src="{{ url_for('static', filename='비누.png') }}" alt="비누">
+                            <div>비누 - 100원</div>
+                        </div>
+                        <div data-item-type="목욕용품" data-item-name="칫솔&치약" data-item-price="100">
+                            <img src="{{ url_for('static', filename='칫솔&치약.png') }}" alt="칫솔&치약">
+                            <div>칫솔&치약 - 100원</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="type">
+                    <div>장난감</div>
+                    <div class="items">
+                        <div data-item-type="장난감" data-item-name="터그" data-item-price="100">
+                            <img src="{{ url_for('static', filename='터그.png') }}" alt="터그">
+                            <div>터그 - 100원</div>
+                        </div>
+                        <div data-item-type="장난감" data-item-name="공" data-item-price="100">
+                            <img src="{{ url_for('static', filename='공.png') }}" alt="공">
+                            <div>공 - 100원</div>
+                        </div>
+                        <div data-item-type="장난감" data-item-name="낚시대" data-item-price="100">
+                            <img src="{{ url_for('static', filename='낚시대.png') }}" alt="낚시대">
+                            <div>낚시대 - 100원</div>
+                        </div>
+                        <div data-item-type="장난감" data-item-name="털실" data-item-price="100">
+                            <img src="{{ url_for('static', filename='털실.png') }}" alt="털실">
+                            <div>털실 - 100원</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="type">
+                    <div>침구류</div>
+                    <div class="items">
+                        <div data-item-type="침구류" data-item-name="쿠션" data-item-price="100">
+                            <img src="{{ url_for('static', filename='쿠션.png') }}" alt="쿠션">
+                            <div>쿠션 - 100원</div>
+                        </div>
+                        <div data-item-type="침구류" data-item-name="이불" data-item-price="100">
+                            <img src="{{ url_for('static', filename='이불.png') }}" alt="이불">
+                            <div>이불 - 100원</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+    </div>
+    <dialog id="snake_modal">
+        <div id="snake-game-container">
+            <div id="snake-header">
+                <span>🐍 스네이크 게임</span>
+                <div id="snake-score-display"><span id="snake-score">0</span></div>
+            </div>
+            <canvas id="snake-canvas" width="400" height="400"></canvas>
+            <p id="snake-guide">방향키를 눌러 게임을 시작하세요</p>
+            <div id="snake-gameover" class="hidden">
+                <h2>💀 게임 오버!</h2>
+                <p class="gameover-score-line">최종 점수: <span id="final-score">0</span></p>
+                <p class="gameover-coin-line">획득 코인: <span id="earned-coin">0</span> 🪙</p>
+                <div class="snake-btn-row">
+                    <button id="snake-restart-btn">🔄 다시 시작</button>
+                    <button id="snake-close-btn">✕ 닫기</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+    <script src="{{ url_for('static', filename='play.js') }}"></script>
+</body>
+
+</html>

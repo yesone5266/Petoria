@@ -1,0 +1,167 @@
+@font-face {
+    font-family: 'OngleipParkDahyeon';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2411-3@1.0/Ownglyph_ParkDaHyun.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SchoolSafetyRoundedSmile';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-R.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SchoolSafetyRoundedSmile';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-B.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+*{
+    font-family: 'SchoolSafetyRoundedSmile';
+    box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote {
+    quotes: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+:root {
+    --pink-rgb: 255 182 193;
+    --pink:rgb(var(--pink-rgb));
+
+    --hpink-rgb: 255 141 199;
+    --hpink:rgb(var(--hpink-rgb));
+
+    --orange-rgb: 255 212 178;
+    --orange:rgb(var(--orange-rgb));
+
+    --green-rgb: 199 233 176;
+    --green:rgb(var(--green-rgb));
+
+    --blue-rgb: 180 228 255;
+    --blue:rgb(var(--blue-rgb));
+
+    --brown-rgb: 183 142 125;
+    --brown:rgb(var(--brown-rgb));
+
+    --dark-brown-rgb: 94 69 59;
+    --dark-brown:rgb(var(--dark-brown-rgb));
+
+    --shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --border: 2px solid var(--pink);
+    --br: 24px;
+    --br-full: calc(infinity * 1px);
+    --fs: 24px;
+    --fs-title: 36px;
+    --pd: 20px 30px
+}
+
+
+body{
+    background-image: url('배경.png');
+    background-position: bottom;
+    background-size: cover;
+    min-height: 100vh;
+}

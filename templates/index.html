@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+
+<body>
+    <div id="container">
+        <div id="title">펫을 선택해주세요!</div>
+        <div id="choose">
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-chevron-left-icon lucide-chevron-left">
+                    <path d="m15 18-6-6 6-6" />
+                </svg>
+            </button>
+            <div>
+                <div id="images">
+                    <img src="{{ url_for('static', filename='치즈_고양이.png') }}" alt="치즈고양이">
+                    <img src="{{ url_for('static', filename='흰색_고양이.png') }}" alt="흰색고양이">
+                    <img src="{{ url_for('static', filename='푸들.png') }}" alt="푸들">
+                    <img src="{{ url_for('static', filename='리트리버.png') }}" alt="리트리버">
+                    <img src="{{ url_for('static', filename='베이지색_토끼.png') }}" alt="베이지색토끼">
+                    <img src="{{ url_for('static', filename='흰색_토끼.png') }}" alt="흰색토끼">
+                </div>
+            </div>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-chevron-right-icon lucide-chevron-right">
+                    <path d="m9 18 6-6-6-6" />
+                </svg>
+            </button>
+        </div>
+        <div id="name">
+            <div>펫 이름 작성</div>
+            <input type="text" placeholder="펫의 이름을 입력해주세요">
+        </div>
+        <button id="complete" disabled>시작하기</button>
+    </div>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+
+</html>
